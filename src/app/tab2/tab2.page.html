@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Inicio Sesión
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div class="login-container">
+  <form (ngSubmit)="login()">
+    <div>
+      <br>
+      <label for="username">Username:</label>
+      <br>
+      <input type="text" id="username" [(ngModel)]="username" name="username" required>
+    </div>
+    <div>
+      <br>
+      <label for="password">Password:</label>
+      <br>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required>
+    </div>
+    <ion-button class="boton-login" color="danger" type="submit">Login</ion-button>
+  </form>
+</div>

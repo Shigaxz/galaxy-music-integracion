@@ -1,0 +1,7 @@
+{
+  "name": "galaxy",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
