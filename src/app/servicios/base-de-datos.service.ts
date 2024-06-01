@@ -27,6 +27,14 @@ const db = getFirestore(app);
 })
 
 export class BaseDeDatosService {
+  sesion : boolean = false;
+  sesionUser: ClUsuario = {
+    id: '',
+    nombre: '',
+    username: '',
+    password: ''
+  };
+  
   
   constructor() {}
   async crearDocumento(coleccion: string, datos: any) {
