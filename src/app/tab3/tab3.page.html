@@ -80,6 +80,7 @@
         <p>Precio: ${{ producto.precio }}</p>
         <p>Stock: {{ producto.stock }}</p>
       </ion-label>
+      <ion-button color="success" (click)="promo(producto.id)">Promocion</ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

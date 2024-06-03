@@ -3,6 +3,7 @@ import { BaseDeDatosService } from '../servicios/base-de-datos.service';
 import { ClUsuario } from '../model/ClUsuario';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
@@ -44,7 +45,6 @@ export class Tab3Page {
       this.nuevoUsuario.username = formData.username;
       this.nuevoUsuario.password = formData.password;
       this.agregarUsuario(this.nuevoUsuario);
-      
     }
   }
   agregarUsuario(usuario : ClUsuario) {
@@ -97,5 +97,8 @@ export class Tab3Page {
   }
   async obtenerProductos()  {
     this.productos = await this.databaseService.leerColeccion('Productos')
+  }
+  promo(id: string) {
+    this.router.navigate(['/promos', id]);
   }
 }

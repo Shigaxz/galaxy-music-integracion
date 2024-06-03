@@ -9,6 +9,9 @@ const routes: Routes = [
   {
     path: 'modificar/:id', loadChildren: () => import('./tab3/modificar/modificar.module').then(m => m.ModificarPageModule)
   },
+  {
+    path: 'promos/:id', loadChildren: () => import('./tab3/promo/promo.module').then(m => m.PromoPageModule)
+  },
 ];
 @NgModule({
   imports: [

@@ -1,10 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = 8000;
 const fs = require('fs');
 const path = require('path');
 
 const dataFilePath = path.join(__dirname, 'data.json');
+app.use(cors());
 app.use(express.json());
 
 let items = [];

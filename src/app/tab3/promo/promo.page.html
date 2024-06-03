@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>promo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="onSubmit(promoDataForm)" #promoDataForm="ngForm">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="producto.nombre" name="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descripcion</ion-label>
+      <ion-input [(ngModel)]="producto.descripcion" name="descripcion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Categoria</ion-label>
+      <ion-input [(ngModel)]="producto.categoria" name="categoria"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input [(ngModel)]="producto.precio" name="precio"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Stock</ion-label>
+      <ion-input [(ngModel)]="producto.stock" name="stock"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descuento:</ion-label>
+      <ion-input [(ngModel)]="promo.descuento" name="descuento"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha inicio:</ion-label>
+      <ion-input [(ngModel)]="promo.fechaInic" name="fechaInic"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha termino:</ion-label>
+      <ion-input [(ngModel)]="promo.fechaTerm" name="fechaTerm"></ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit">Crear promocion</ion-button>
+  </form>
+</ion-content>

@@ -10,7 +10,11 @@ const routes: Routes = [
   {
     path: 'modificar',
     loadChildren: () => import('./modificar/modificar.module').then( m => m.ModificarPageModule)
+  },  {
+    path: 'promo',
+    loadChildren: () => import('./promo/promo.module').then( m => m.PromoPageModule)
   }
+
 ];
 
 @NgModule({

@@ -1,7 +1,16 @@
 [
   {
-    "id": 1,
-    "name": "Item 123",
-    "price": 1
+    "prod": {
+      "id": "MvqoluTjtyZ2U3qWxI0f",
+      "precio": "2000",
+      "imagen": "https://artemusica.cl/web/wp-content/uploads/2024/01/Pack-de-guitarra-acustica-Admira-Alba-Nylon.webp",
+      "nombre": "Guitarra",
+      "stock": "10",
+      "categoria": "Instrumento",
+      "descripcion": "una guitarra xd"
+    },
+    "descuento": "10%",
+    "fechaInic": "1/1/1",
+    "fechaTerm": "3/1/1"
   }
 ]
