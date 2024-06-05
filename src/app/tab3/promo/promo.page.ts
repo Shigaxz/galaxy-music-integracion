@@ -21,6 +21,7 @@ export class PromoPage implements OnInit {
     stock: 0
   };
   promo: any = {
+    id: 0,
     prod : this.producto,
     descuento: 0,
     fechaInic: "",
@@ -46,12 +47,13 @@ export class PromoPage implements OnInit {
   }
   
   async agregarPromo(promo: any) {
+    this.promo.id =  this.idRandom ;
     await this.rest.addPromo(promo).subscribe(
       () => {
         this.navCtrl.navigateBack('/promo-list');  // Navegar de regreso a la lista de promos
       },
       (error) => {
-        console.error('Error creating promo:', error);
+        console.error(error);
       }
     );
   }
@@ -65,5 +67,9 @@ export class PromoPage implements OnInit {
       this.agregarPromo(this.promo);
     }
   }
-
+  idRandom(): number {
+    const min = Math.pow(10, 10 - 1);
+    const max = Math.pow(10, 10) - 1;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 }

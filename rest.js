@@ -32,7 +32,12 @@ app.listen(port, () => {
   console.log(`Servidor escuchando en http://localhost:${port}`);
   console.log(`http://localhost:${port}/api/promos`);
 });
-
+//FUNCION para 
+function idRandom() {
+  const min = Math.pow(10, 5 - 1);
+  const max = Math.pow(10, 5) - 1;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 //LEER
 app.get('/api/promos', (req, res) => {
     const items = readData();
@@ -51,10 +56,12 @@ app.get('/api/promos/:id', (req, res) => {
 //AGREGAR
 app.post('/api/promos', (req, res) => {
     console.log(req.body);
-    const newItem = req.body;
-    items.push(newItem);
+    const items = readData();
+    const idRNG = idRandom();
+    const nuevaPromo = { id: idRNG, ...req.body };
+    items.push(nuevaPromo);
     writeData(items);
-    res.status(201).send(newItem);
+    res.status(201).send(nuevaPromo);
 });
 //MODIFICAR
 app.put('/api/promos/:id', (req, res) => {
