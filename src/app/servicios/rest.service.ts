@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-
+import { Observable, map } from 'rxjs';
+import { ClPromociones } from '../model/ClPromocion';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,4 +14,7 @@ export class RestService {
   addPromo(promo: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, promo);
   }
+  getPromo(): Observable<ClPromociones[]> {
+    return this.http.get<ClPromociones[]>(this.apiUrl);
+  } 
 }

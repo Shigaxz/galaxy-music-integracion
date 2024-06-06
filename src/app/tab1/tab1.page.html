@@ -1,17 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content>
+  <ion-item *ngFor="let promo of promociones">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ promo.prod.nombre}}</ion-card-title>
+        <img class="imagen" [src]="promo.prod.imagen" alt="{{ promo.prod.imagen }}" />
+        <ion-card-subtitle>Precio original: {{promo.prod.precio}}</ion-card-subtitle>
+        <ion-card-subtitle>Precio promocion: {{ promo.precioFinal }}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{promo.prod.descripcion}} Stock: {{promo.prod.stock}}
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
 </ion-content>

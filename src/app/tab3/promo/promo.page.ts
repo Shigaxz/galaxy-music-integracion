@@ -20,10 +20,12 @@ export class PromoPage implements OnInit {
     precio: 0,
     stock: 0
   };
+  descuento: number = 0;
   promo: any = {
     id: 0,
     prod : this.producto,
     descuento: 0,
+    precioFinal: 0,
     fechaInic: "",
     fechaTerm: ""
   }
@@ -61,7 +63,9 @@ export class PromoPage implements OnInit {
     if (promoDataForm.valid) {
       const formData = promoDataForm.value;
       this.promo.prod = this.producto;
-      this.promo.descuento = formData.descuento;
+      this.promo.descuento = (formData.descuento *100).toFixed(2)+'%';
+      this.descuento = Number(this.producto.precio) * Number(formData.descuento);
+      this.promo.precioFinal = this.producto.precio -this.descuento;
       this.promo.fechaInic = formData.fechaInic;
       this.promo.fechaTerm = formData.fechaTerm;
       this.agregarPromo(this.promo);
