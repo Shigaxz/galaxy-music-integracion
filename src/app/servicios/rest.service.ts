@@ -16,5 +16,6 @@ export class RestService {
   }
   getPromo(): Observable<ClPromociones[]> {
     return this.http.get<ClPromociones[]>(this.apiUrl);
+    
   } 
 }
