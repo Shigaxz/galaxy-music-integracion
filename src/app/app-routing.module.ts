@@ -12,6 +12,9 @@ const routes: Routes = [
   {
     path: 'promos/:id', loadChildren: () => import('./tab3/promo/promo.module').then(m => m.PromoPageModule)
   },
+  {
+    path: 'contenido', loadChildren: () => import('./tab1/contenido/contenido.module').then(m => m.ContenidoPageModule)
+  }
 ];
 @NgModule({
   imports: [

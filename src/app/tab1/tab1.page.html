@@ -1,24 +1,54 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header [translucent]="true" class="pheader">
+  <ion-toolbar class="toolbar">
     <ion-title>
-      Home
+      Galaxy Music
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <ion-item *ngFor="let promo of promociones">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>{{ promo.prod.nombre}}</ion-card-title>
-        <img class="imagen" [src]="promo.prod.imagen" alt="{{ promo.prod.imagen }}" />
-        <ion-card-subtitle>Precio original: {{promo.prod.precio}}</ion-card-subtitle>
-        <ion-card-subtitle>Precio promocion: {{ promo.precioFinal }}</ion-card-subtitle>
-      </ion-card-header>
-    
-      <ion-card-content>
-        {{promo.prod.descripcion}} Stock: {{promo.prod.stock}}
-      </ion-card-content>
-    </ion-card>
-  </ion-item>
+<div class="f-cont">
+    <h1>Descubre el sonido que te apaciona</h1>
+</div>
+
+<div class="t-cont">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="t-one">
+        <ion-img src="assets/ja.png"></ion-img>
+      </ion-col>
+      <ion-col class="t-two">
+        <h2>
+          Sumergete en un mundo de musica<br>
+          como nunca antes.<br>
+          Encuentra las ultimas novedades y los clasicos<br>
+          atemporales en Galaxy Music.<br><br>
+          <button (click)="verContenido()">Explorar contenido</button>
+        </h2>
+        <br>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+<div class="s-cont">
+  <ion-grid>
+    <ion-row>
+      <ion-col><ion-icon name="headset-outline" size="large"></ion-icon>
+        <h2>
+          Calidad de sonido profecional
+        </h2>
+      </ion-col>
+      <ion-col></ion-col>
+      <ion-col><ion-icon name="disc-outline" size="large"></ion-icon>
+        <h2>Originales, clasicos y coleccionables</h2></ion-col>
+      <ion-col><ion-icon name="storefront-outline" size="large"></ion-icon>
+        <h2>Todos los instrumentos que necesites los puedes encontrar aqui</h2></ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
 </ion-content>
+
+
+
+

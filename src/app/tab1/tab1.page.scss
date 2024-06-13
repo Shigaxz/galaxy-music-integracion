@@ -2,3 +2,83 @@
     height: 128px;
     width: 128px;
 }
+
+.pheader{
+    background-color: #895422;
+    color: #895422;
+}
+
+.toolbar{
+    color: white;
+    background: #895422;
+}
+
+.f-cont {
+    height: 500px;
+    background-image: url(https://c.wallhere.com/photos/a9/bf/vinyl_music-203691.jpg!d);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.f-cont h1{
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.s-cont{
+    height: 500px;
+    background-image: url(https://c.pxhere.com/photos/7f/77/turntable_top_view_audio_equipment_music_record_sound_technology-667247.jpg!d);
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.s-cont h2{
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.s-cont ion-col{
+    padding-left: 35px;
+}
+.t-one {
+    background-color: #0f0f0e;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.t-one ion-img{
+    width: 80%;
+    height: 70%;
+}
+.t-two{
+    background-color: #333141;
+    align-items: center;
+    display: flex;
+}
+.t-two h2{
+    font-size: 35px;
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.t-two button{
+    font-size: 20px;
+    height: 45px;
+    width: 180px;
+    background: #333141;
+    border: 1px solid white;
+    outline: none;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
