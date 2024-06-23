@@ -4,10 +4,10 @@
     align-items: center; /* Centra verticalmente */
     height: 100vh;
 }
-.form-container{
+.form-container-r{
     position: relative;
     width: 300px;
-    height: 350px;
+    height: 420px;
     background: #333141; 
     border-radius: 5%;
     backdrop-filter: blur(20px);
@@ -16,21 +16,22 @@
     justify-content: center;
     align-items: center;
     opacity: .9;
+    
 }
 
-.form-container h2{
+.form-container-r h2{
     color: rgb(255, 255, 255);
     justify-content: center;
     align-items: center;
     position: relative;
     display: flex;
-      text-shadow: 
+    text-shadow: 
     -1px -1px 0 #000000,  
     1px -1px 0 #000000,  
     -1px 1px 0 #000000,  
-    1px 1px 0 #000000,  
+    1px 1px 0 #000000, 
 }
-.form-container label{
+.form-container-r label{
     color: rgb(255, 255, 255);
 }
 
@@ -66,9 +67,8 @@
     color: rgb(0, 0, 0);
     transition: .5s;
 }
-
 ion-content {
-    --background: none; /* Elimina cualquier fondo por defecto de ion-content */
+    --background: none;
     background: url(https://i.pinimg.com/originals/b8/2e/19/b82e19eb385c15a3a580897b6cf6e51e.jpg) no-repeat center center fixed;
     background-size: cover;
 }

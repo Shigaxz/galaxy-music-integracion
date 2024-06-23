@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Menu Publicaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="publiform">
+    <form (ngSubmit)="onSubmitt(publiDataForm)" #publiDataForm="ngForm">
+      <h2>Agregar nueva publicacion</h2>
+      <label for="titulo">Titulo:</label>
+      <br>
+      <input type="text" id="titulo" name="titulo" ngModel required>
+      <br>
+      <label for="contenido">Descripcion:</label>
+      <br>
+      <input type="text" id="contenido" name="contenido" ngModel required>
+      <br>
+      <label for="imagen">Imagen:</label>
+      <br>
+      <input type="text" id="imagen" name="imagen" ngModel required>
+      <br>
+      <label for="fecha">Fecha:</label>
+      <br>
+      <input type="date" id="fecha" name="fecha" ngModel required>
+      <br>
+      <ion-button color="primary" type="submit">Agregar Publicacion</ion-button>
+    </form>
+  </div>
+
+  <h2>Lista de Publicaciones</h2>
+  <ion-list>
+    <ion-item *ngFor="let publi of publicaciones">
+      <ion-label>
+        <h2>Titulo: {{ publi.titulo }}</h2>
+        <p>Fecha: {{ publi.fecha }}</p>
+      </ion-label>
+      <ion-button color="danger" (click)="eliminarPublicaciones(publi.id)">Eliminar</ion-button>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>

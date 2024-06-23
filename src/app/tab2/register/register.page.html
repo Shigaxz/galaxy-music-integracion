@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Crear cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div class="contenido">
+<div class="form-container-r">
+  <form (ngSubmit)="onSubmit(userDataForm)" #userDataForm="ngForm">
+    <h2>Registro</h2>
+    <label for="nombre">Nombre:</label>
+    <br>
+    <input class="input-box" type="text" id="nombre" name="nombre" ngModel required>
+    <br><br>
+    <label for="username">Nombre de usuario:</label>
+    <br>
+    <input class="input-box" type="text" id="username" name="username" ngModel required>
+    <br><br>
+    <label for="correo">Correo electronico:</label>
+    <br>
+    <input class="input-box" type="text" id="correo" name="correo" ngModel required>
+    <br><br>
+    <label for="password">Contraseña:</label>
+    <br>
+    <input class="input-box" type="password" id="password" name="password" ngModel required>
+    <br><br>
+    <button class="btn" type="submit">Registro</button>
+  </form>
+</div>
+</div>
+</ion-content>

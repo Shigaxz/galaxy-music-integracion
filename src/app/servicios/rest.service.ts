@@ -7,15 +7,17 @@ import { ClPromociones } from '../model/ClPromocion';
 })
 
 export class RestService {
-  private apiUrl = 'http://localhost:8000/api/promos';
-
+  private apiIns = 'http://localhost:3000/instrumentos';
+  private apiDis = 'http://localhost:3000/discos';
   constructor(private http: HttpClient) { }
 
   addPromo(promo: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, promo);
+    return this.http.post<any>(this.apiIns, promo);
   }
-  getPromo(): Observable<ClPromociones[]> {
-    return this.http.get<ClPromociones[]>(this.apiUrl);
-    
-  } 
+  getIns(): Observable<ClPromociones[]> {
+    return this.http.get<ClPromociones[]>(this.apiIns);
+  }
+  getDis(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiDis);
+  }
 }

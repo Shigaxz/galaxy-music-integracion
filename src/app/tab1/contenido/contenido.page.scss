@@ -1,0 +1,114 @@
+.s-cont{
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-image: url(https://r4.wallpaperflare.com/wallpaper/346/873/116/music-guitar-instrumento-studio-wallpaper-233a534a88553c0d38722e8381584251.jpg);
+    background-size: cover;
+    background-position: center bottom;
+}
+.s-cont h2{
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    justify-content: center;
+    align-items: center;
+    display: flex
+}
+
+.s-cont ion-col{
+    justify-content: center;
+    align-items: center;
+    display: flex
+}
+
+.s-cont ion-grid{
+    max-height: max-content;
+}
+
+.s-cont button{
+    width: 22%;
+    height: 45px;
+    background: #333141;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    opacity: 0.5;
+}
+
+.s-cont button:hover{
+    width: 24%;
+    height: 45px;
+    background: #333141;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    opacity: 1;
+    transition: .5s;
+}
+
+.d-cont{
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-image: url(https://c1.wallpaperflare.com/path/606/1001/306/people-crowd-stage-spotlight-4da5609acf846adbd389cd760a2d6a19.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.d-cont h3{
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    justify-content: center;
+    align-items: center;
+    display: flex
+}
+.d-cont ion-row{
+    justify-content: center;
+    align-items: center;
+    display: flex 
+}
+.cont-redes{
+    width: 22%;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex 
+}
+.cont-redes button{
+    width: 33%;
+    height: 45px;
+}
+.youtube{
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+.youtube:hover{
+    background: #FF0000;
+    opacity: 1;
+    transition: 1s;
+}
+.instagram:hover{
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    transition: 1s;
+}
+.tiktok{
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+.tiktok:hover{
+    background: #000000;
+    opacity: 1;
+    transition: 1s;
+}

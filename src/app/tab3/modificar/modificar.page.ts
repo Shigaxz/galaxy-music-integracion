@@ -13,7 +13,9 @@ export class ModificarPage implements OnInit {
     id: '',
     nombre: '',
     username: '',
-    password: ''
+    correo: '',
+    password: '',
+    rol: 0
   };
   constructor(
     private route: ActivatedRoute,

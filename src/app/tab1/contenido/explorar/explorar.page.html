@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>explorar</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div *ngIf="cont === 'promociones'">
+<h1>promociones</h1>
+</div>
+
+<div *ngIf="cont === 'publicaciones'">
+<h1>publicaciones</h1>
+<ion-item *ngFor="let ins of instrumentos">
+  
+</ion-item>
+</div>
+
+<div *ngIf="cont === 'influencers'">
+<h1>influencers</h1>
+</div>
+</ion-content>

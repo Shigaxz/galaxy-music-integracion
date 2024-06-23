@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collectionData } from '@angular/fire/firestore';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { AngularFireModule } from '@angular/fire/compat'
-import { Observable,from } from 'rxjs';
-import { inject } from '@angular/core';
+
 import { ClUsuario } from '../model/ClUsuario'
-import { environment } from '../../environments/environment';
+
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Observable } from 'rxjs';
 import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc, updateDoc, query, where } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 
@@ -32,7 +30,9 @@ export class BaseDeDatosService {
     id: '',
     nombre: '',
     username: '',
-    password: ''
+    correo: '',
+    password: '',
+    rol: 0
   };
   
   
@@ -73,9 +73,8 @@ export class BaseDeDatosService {
     if (querySnapshot.empty) {
       return null;
     }
-
-    // Retornar el primer documento encontrado (suponiendo que username y password son únicos)
     const doc = querySnapshot.docs[0];
     return { id: doc.id, ...doc.data() };
   }
+
 }

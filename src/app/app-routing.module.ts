@@ -14,7 +14,16 @@ const routes: Routes = [
   },
   {
     path: 'contenido', loadChildren: () => import('./tab1/contenido/contenido.module').then(m => m.ContenidoPageModule)
-  }
+  },
+  {
+    path: 'register', loadChildren: () => import('./tab2/register/register.module').then(m => m.RegisterPageModule)
+  },
+  {
+    path: 'publicaciones', loadChildren: () => import('./tab3/publicaciones/publicaciones.module').then(m => m.PublicacionesPageModule)
+  },
+  {
+    path: 'explorar/:contenido', loadChildren: () => import('./tab1/contenido/explorar/explorar.module').then(m => m.ExplorarPageModule)
+  },
 ];
 @NgModule({
   imports: [

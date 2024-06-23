@@ -1,9 +1,50 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Ofertas y promociones</ion-title>
+    <ion-title>Galaxy Music</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
 
+
+  <div class="s-cont">
+    <ion-grid>
+      <h2>Explora todo el contenido que Galaxy Music tiene para ofrecer</h2>
+      <ion-row>
+        <ion-col class="ofertas">
+
+          <button (click)="explorar(promociones)">Ver promociones</button>
+
+        </ion-col>
+        <ion-col class="noticias">
+
+          <button (click)="explorar(publicaciones)">Ver publicaciones</button>
+
+        </ion-col>
+        <ion-col class="influencers">
+
+          <button (click)="explorar(influencers)">Ver influencers</button>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="d-cont">
+    <ion-grid>
+      <ion-row>
+      <h3>Enterate de las novedades de Galaxy Music a travez de nuestas</h3>
+      <h3>redes sociales</h3>
+    </ion-row>
+    <ion-row>
+      <div class="cont-redes">
+        <br>
+        <button class="youtube"><ion-icon name="logo-youtube" size="large"></ion-icon></button>
+        <button class="instagram"><ion-icon name="logo-instagram" size="large"></ion-icon></button>
+        <button class="tiktok"><ion-icon name="logo-tiktok" size="large"></ion-icon></button>
+      </div>
+    </ion-row>
+    </ion-grid>
+  </div>
+
+  
 </ion-content>

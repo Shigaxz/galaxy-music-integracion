@@ -4,25 +4,6 @@
   </ion-toolbar>
 </ion-header>
 
-<div class="userform">
-<form (ngSubmit)="onSubmitt(userDataForm)" #userDataForm="ngForm">
-  <h2>Agregar nuevo usuario</h2>
-  <label for="nombre">Nombre:</label>
-  <br>
-  <input type="text" id="nombre" name="nombre" ngModel required>
-  <br>
-  <label for="username">Nombre de usuario:</label>
-  <br>
-  <input type="text" id="username" name="username" ngModel required>
-  <br>
-  <label for="password">Contraseña:</label>
-  <br>
-  <input type="password" id="password" name="password" ngModel required>
-  <br>
-  <ion-button color="primary" type="submit">Agregar Usuario</ion-button>
-</form>
-</div>
-
 <ion-content>
   <h2>Lista usuarios</h2>
   <ion-list>
@@ -36,51 +17,19 @@
       <ion-button color="danger" (click)="eliminarUsuario(usuario.id)">Eliminar</ion-button>
     </ion-item>
   </ion-list>
-</ion-content>
 
-<div class="prodform">
-  <form (ngSubmit)="onSubmit(prodDataForm)" #prodDataForm="ngForm">
-    <h2>Agregar nuevo producto</h2>
-    <label for="nombre">Nombre:</label>
-    <br>
-    <input type="text" id="nombre" name="nombre" ngModel required>
-    <br>
-    <label for="imagen">Imagen:</label>
-    <br>
-    <input type="text" id="imagen" name="imagen" ngModel required>
-    <br>
-    <label for="descripcion">Descripcion:</label>
-    <br>
-    <input type="text" id="descripcion" name="descripcion" ngModel required>
-    <br>
-    <label for="categoria">Categoria:</label>
-    <br>
-    <input type="text" id="categoria" name="categoria" ngModel required>
-    <br>
-    <label for="precio">Precio:</label>
-    <br>
-    <input type="number" id="precio" name="precio" ngModel required>
-    <br>
-    <label for="stock">Stock:</label>
-    <br>
-    <input type="number" id="stock" name="stock" ngModel required>
-    <br>
-    <ion-button color="primary" type="submit">Agregar producto</ion-button>
-  </form>
-</div>
-
-<ion-content>
   <h2>Lista productos</h2>
   <ion-list>
-    <ion-item *ngFor="let producto of productos">
+    <ion-item *ngFor="let ins of instrumentos">
       <ion-label>
-        <h2>Nombre: {{ producto.nombre }}</h2>       
-        <p>Descripcion: {{producto.descripcion}}</p>
-        <p>Categoria: {{ producto.categoria }}</p>
-        <p>Precio: ${{ producto.precio }}</p>
-        <p>Stock: {{ producto.stock }}</p>
+        <h2>Nombre: {{ ins.nombre }}</h2>       
+        <p>Descripcion: {{ins.descripcion}}</p>
+        <p>Categoria: {{ ins.categoria }}</p>
+        <p>Precio: ${{ ins.precio }}</p>
+        <p>Stock: {{ ins.stock }}</p>
       </ion-label>
-      <ion-button color="success" (click)="promo(producto.id)">Promocion</ion-button>
+      <ion-button color="success" (click)="promo(ins.id)">Promocion</ion-button>
     </ion-item>
   </ion-list>
+  <ion-button (click)="publicaciones()">Crear publicaciones</ion-button>
 </ion-content>

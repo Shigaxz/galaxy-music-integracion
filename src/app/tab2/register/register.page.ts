@@ -1,37 +1,25 @@
-import { Component } from '@angular/core';
-import { BaseDeDatosService } from '../servicios/base-de-datos.service';
-import { ClUsuario } from '../model/ClUsuario';
+import { Component, OnInit } from '@angular/core';
+import { BaseDeDatosService } from '../../servicios/base-de-datos.service';
+import { ClUsuario } from '../../model/ClUsuario';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  selector: 'app-register',
+  templateUrl: './register.page.html',
+  styleUrls: ['./register.page.scss'],
 })
-export class Tab2Page {
-
-  username: string = '';
-  password: string = '';
-
+export class RegisterPage implements OnInit {
   nuevoUsuario: any = {
     nombre: '',
     username: '',
-    password: ''
+    correo: '',
+    password: '',
+    rol: 0
   };
   constructor(private db: BaseDeDatosService,
-    private router: Router,
-  ) {}
+    private router: Router) { }
 
-  async login() {
-    try {
-      const user:ClUsuario = await this.db.buscarUsuario("Usuario",this.username, this.password);
-      this.db.sesionUser = user;
-      this.db.sesion = true;
-      alert("Bienvenido "+ user.nombre);
-    } catch (error) {
-      alert("Usuario no encontrado");
-    }
+  ngOnInit() {
   }
 
   onSubmit(userDataForm: NgForm) {
@@ -39,6 +27,7 @@ export class Tab2Page {
       const formData = userDataForm.value;
       this.nuevoUsuario.nombre = formData.nombre;
       this.nuevoUsuario.username = formData.username;
+      this.nuevoUsuario.correo = formData.correo;
       this.nuevoUsuario.password = formData.password;
       this.agregarUsuario(this.nuevoUsuario);
       
@@ -47,15 +36,12 @@ export class Tab2Page {
   agregarUsuario(usuario : ClUsuario) {
     const coleccion = 'Usuario';
     this.db.crearDocumento(coleccion, this.nuevoUsuario);
-    alert("Usuario agregado");
+    alert("Cuenta creada correctamente");
     this.nuevoUsuario = {
       nombre: '',
       username: '',
+      correo: '',
       password: ''
     };
-  }
-
-  register() {
-    this.router.navigate(['/register']);
   }
 }

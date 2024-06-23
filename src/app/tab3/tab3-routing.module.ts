@@ -13,6 +13,14 @@ const routes: Routes = [
   },  {
     path: 'promo',
     loadChildren: () => import('./promo/promo.module').then( m => m.PromoPageModule)
+  },
+  {
+    path: 'noticias',
+    loadChildren: () => import('./noticias/noticias.module').then( m => m.NoticiasPageModule)
+  },
+  {
+    path: 'publicaciones',
+    loadChildren: () => import('./publicaciones/publicaciones.module').then( m => m.PublicacionesPageModule)
   }
 
 ];

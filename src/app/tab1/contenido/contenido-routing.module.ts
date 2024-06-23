@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: ContenidoPage
+  },  {
+    path: 'explorar',
+    loadChildren: () => import('./explorar/explorar.module').then( m => m.ExplorarPageModule)
   }
+
 ];
 
 @NgModule({
