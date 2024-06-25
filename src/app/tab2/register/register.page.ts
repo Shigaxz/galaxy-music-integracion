@@ -43,5 +43,6 @@ export class RegisterPage implements OnInit {
       correo: '',
       password: ''
     };
+    this.router.navigate(['/tabs/tab2']);
   }
 }

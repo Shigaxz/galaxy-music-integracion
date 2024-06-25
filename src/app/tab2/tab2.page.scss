@@ -72,3 +72,25 @@ ion-content {
     background: url(https://i.pinimg.com/originals/b8/2e/19/b82e19eb385c15a3a580897b6cf6e51e.jpg) no-repeat center center fixed;
     background-size: cover;
 }
+
+.title-login{
+    width: 20%;
+    text-align: right;
+}
+
+.logout{
+    width: 80%;
+    height: 45px;
+    background: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+.logout:hover{
+    background: rgb(228, 50, 50);
+    transition: .5s;
+}

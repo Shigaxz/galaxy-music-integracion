@@ -1,8 +1,19 @@
 <ion-header [translucent]="true" class="pheader">
   <ion-toolbar class="toolbar">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
     <ion-title>
       Galaxy Music
     </ion-title>
+      </ion-col>
+      <ion-col class="title-login" *ngIf="bdd.sesion === true">
+        <ion-title>
+          Bievenido... {{ bdd.sesionUser.nombre }}
+        </ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   </ion-toolbar>
 </ion-header>
 <ion-content>

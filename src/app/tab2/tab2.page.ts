@@ -10,16 +10,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
   username: string = '';
   password: string = '';
-
-  nuevoUsuario: any = {
-    nombre: '',
-    username: '',
-    password: ''
-  };
-  constructor(private db: BaseDeDatosService,
+  constructor(public db: BaseDeDatosService,
     private router: Router,
   ) {}
 
@@ -29,33 +22,26 @@ export class Tab2Page {
       this.db.sesionUser = user;
       this.db.sesion = true;
       alert("Bienvenido "+ user.nombre);
+      this.router.navigate(['/tabs/tab1']);
     } catch (error) {
-      alert("Usuario no encontrado");
-    }
-  }
-
-  onSubmit(userDataForm: NgForm) {
-    if (userDataForm.valid) {
-      const formData = userDataForm.value;
-      this.nuevoUsuario.nombre = formData.nombre;
-      this.nuevoUsuario.username = formData.username;
-      this.nuevoUsuario.password = formData.password;
-      this.agregarUsuario(this.nuevoUsuario);
       
     }
-  }
-  agregarUsuario(usuario : ClUsuario) {
-    const coleccion = 'Usuario';
-    this.db.crearDocumento(coleccion, this.nuevoUsuario);
-    alert("Usuario agregado");
-    this.nuevoUsuario = {
-      nombre: '',
-      username: '',
-      password: ''
-    };
   }
 
   register() {
     this.router.navigate(['/register']);
+  }
+
+  async logout() {
+      this.db.sesion = false;
+      const clearUser:ClUsuario= {
+        id: '',
+        nombre: '',
+        username: '',
+        correo: '',
+        password: '',
+        rol: 0
+      };
+      this.db.sesionUser = clearUser;
   }
 }

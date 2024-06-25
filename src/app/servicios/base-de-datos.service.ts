@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 
 import { ClUsuario } from '../model/ClUsuario'
 
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Observable } from 'rxjs';
 import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc, updateDoc, query, where } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
@@ -76,5 +75,4 @@ export class BaseDeDatosService {
     const doc = querySnapshot.docs[0];
     return { id: doc.id, ...doc.data() };
   }
-
 }

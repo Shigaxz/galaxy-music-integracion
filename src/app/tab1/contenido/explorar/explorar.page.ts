@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClPublicacion } from 'src/app/model/ClPublicacion';
+import { ClUsuario } from 'src/app/model/ClUsuario';
 import { BaseDeDatosService } from 'src/app/servicios/base-de-datos.service';
 import { RestService } from 'src/app/servicios/rest.service';
 @Component({
@@ -16,7 +17,7 @@ export class ExplorarPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private databaseService:BaseDeDatosService) { }
+    public databaseService:BaseDeDatosService) { }
 
   ngOnInit() {
     this.cont = this.route.snapshot.paramMap.get('contenido');

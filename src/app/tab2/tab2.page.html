@@ -1,15 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+      <ion-title>
       Inicio Sesión
-    </ion-title>
+      </ion-title>
+      </ion-col>
+      <ion-col class="title-login" *ngIf="db.sesion === true">
+        <ion-title>
+          Bievenido... {{ db.sesionUser.nombre }}
+        </ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   </ion-toolbar>
 </ion-header>
 <ion-content>
 <!--FORM LOGIN-->
+
+
 <div class="contenido">
   <div class="form-container">
-  <form (ngSubmit)="login()">
+  <form (ngSubmit)="login()" *ngIf="db.sesion === false">
     <h2>Iniciar Sesión</h2>
     <div>
       <label for="username">Username:</label>
@@ -27,6 +40,7 @@
     <br><br>
     <button class="btn" (click)="register()">Crear cuenta</button>
   </form>
+  <button class="logout" *ngIf="db.sesion === true" (click)="logout()">Cerrar Sesión</button>
 </div>
 </div>
 </ion-content>
