@@ -5,11 +5,13 @@ import { Observable, map } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-
+//https://galaxy-music-apirest.netlify.app/.netlify/functions/server/promos
+//https://galaxy-music-apirest.netlify.app/.netlify/functions/server/instrumentos
+//https://galaxy-music-apirest.netlify.app/.netlify/functions/server/discos
 export class RestService {
-  private apiPromo = 'http://localhost:8000/api/promos';
-  private apiIns = 'http://localhost:3000/instrumentos';
-  private apiDis = 'http://localhost:3000/discos';
+  private apiPromo = 'https://galaxy-music-apirest.netlify.app/.netlify/functions/server/promos';
+  private apiIns = 'https://galaxy-music-apirest.netlify.app/.netlify/functions/server/instrumentos';
+  private apiDis = 'https://galaxy-music-apirest.netlify.app/.netlify/functions/server/discos';
   constructor(private http: HttpClient) { }
 
   addPromo(promo: any): Observable<any> {

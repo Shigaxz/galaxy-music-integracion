@@ -1,1 +1,0 @@
-json-server --watch api-url.json
