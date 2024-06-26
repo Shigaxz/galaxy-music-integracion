@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { RestService } from './rest.service';
+import { ClPromociones } from '../model/ClPromocion';
 
 describe('RestService', () => {
   let service: RestService;
@@ -17,54 +18,57 @@ describe('RestService', () => {
   });
 
   afterEach(() => {
-    httpMock.verify(); // Verifica que no hayan solicitudes pendientes al final de cada prueba
+    httpMock.verify(); // Verifica que no haya solicitudes pendientes
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should add a promo', () => {
-    const mockPromo = { id: 1, name: 'Promo 1' };
-
-    service.addPromo(mockPromo).subscribe(response => {
-      expect(response).toEqual(mockPromo);
-    });
-
-    const req = httpMock.expectOne('http://localhost:8000/api/promos');
-    expect(req.request.method).toBe('POST');
-    req.flush(mockPromo);
-  });
-
-  it('should get instrument promotions', () => {
-    const mockPromos: any[] = [
-      { id: 1, name: 'Promo 1' },
-      { id: 2, name: 'Promo 2' }
+  it('should fetch promotions via GET', () => {
+    const dummyPromos: ClPromociones[] = [
+      { id: "a", prod: 'Instrumento', descuento: 10, precioFinal: 900, fechaInic: '2024-06-27', fechaTerm: '2024-07-27' },
+      { id: "b", prod: 'Disco', descuento: 15, precioFinal: 850, fechaInic: '2024-06-30', fechaTerm: '2024-07-30' }
     ];
 
-    service.getIns().subscribe(promos => {
+    service.getPromos().subscribe(promos => {
       expect(promos.length).toBe(2);
-      expect(promos).toEqual(mockPromos);
+      expect(promos).toEqual(dummyPromos);
     });
 
-    const req = httpMock.expectOne('http://localhost:3000/instrumentos');
+    const req = httpMock.expectOne(service.apiPromo);
     expect(req.request.method).toBe('GET');
-    req.flush(mockPromos);
+    req.flush(dummyPromos);
   });
 
-  it('should get disc promotions', () => {
-    const mockDiscs: any[] = [
-      { id: 1, name: 'Disc 1' },
-      { id: 2, name: 'Disc 2' }
+  it('should fetch instruments via GET', () => {
+    const dummyInstruments = [
+      { id: 1, instrumento: 'Guitarra', tipoInstrumento: 'Cuerda', marca: 'Fender', precio: 1200, stock: 10 },
+      { id: 2, instrumento: 'Piano', tipoInstrumento: 'Tecla', marca: 'Yamaha', precio: 1500, stock: 5 }
     ];
 
+    service.getIns().subscribe(instruments => {
+      expect(instruments.length).toBe(2);
+      expect(instruments).toEqual(dummyInstruments);
+    });
+
+    const req = httpMock.expectOne(service.apiIns);
+    expect(req.request.method).toBe('GET');
+    req.flush(dummyInstruments);
+  });
+
+  it('should fetch discs via GET', () => {
+    const dummyDiscs = [
+      { id: 1, disco: 'Album 1', selloDiscografico: 'Sony', artista: 'Artista 1', precio: 20, stock: 100 },
+      { id: 2, disco: 'Album 2', selloDiscografico: 'Warner', artista: 'Artista 2', precio: 25, stock: 150 }
+    ];
     service.getDis().subscribe(discs => {
       expect(discs.length).toBe(2);
-      expect(discs).toEqual(mockDiscs);
+      expect(discs).toEqual(dummyDiscs);
     });
 
-    const req = httpMock.expectOne('http://localhost:3000/discos');
+    const req = httpMock.expectOne(service.apiDis);
     expect(req.request.method).toBe('GET');
-    req.flush(mockDiscs);
+    req.flush(dummyDiscs);
   });
 });

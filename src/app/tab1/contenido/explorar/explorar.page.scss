@@ -2,3 +2,51 @@
     width: 20%;
     text-align: right;
 }
+ion-content {
+    --background: none; /* Elimina cualquier fondo por defecto de ion-content */
+    background: url(https://i.pinimg.com/originals/b8/2e/19/b82e19eb385c15a3a580897b6cf6e51e.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+h1{
+    font-size: 2.2em;
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    justify-content: center;
+    align-items: center;
+    display: flex
+}
+ion-card-title{
+    color: rgb(255, 255, 255);
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+ion-card-subtitle{
+    color: rgb(255, 255, 255);
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+ion-card-content{
+    color: rgb(255, 255, 255);
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+ion-card{
+    background: #333141; 
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+.imagen{
+    width: 5%;
+}

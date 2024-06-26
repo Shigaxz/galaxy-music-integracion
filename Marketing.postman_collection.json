@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "8630d9f2-b126-4e90-82fa-d4ba02b0977c",
+		"name": "Marketing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "35809025"
+	},
+	"item": [
+		{
+			"name": "get instrumentos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://galaxy-music-apirest.netlify.app/.netlify/functions/server/instrumentos"
+			},
+			"response": []
+		},
+		{
+			"name": "get discos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://galaxy-music-apirest.netlify.app/.netlify/functions/server/discos"
+			},
+			"response": []
+		},
+		{
+			"name": "get promos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://galaxy-music-apirest.netlify.app/.netlify/functions/server/promos"
+			},
+			"response": []
+		},
+		{
+			"name": "post promo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://galaxy-music-apirest.netlify.app/.netlify/functions/server/promos"
+			},
+			"response": []
+		}
+	]
+}

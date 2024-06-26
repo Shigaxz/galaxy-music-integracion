@@ -22,13 +22,23 @@
   <ion-list>
     <ion-item *ngFor="let ins of instrumentos">
       <ion-label>
-        <h2>Nombre: {{ ins.nombre }}</h2>       
-        <p>Descripcion: {{ins.descripcion}}</p>
-        <p>Categoria: {{ ins.categoria }}</p>
+        <h2>Instrumento: {{ ins.instrumento }}</h2>       
+        <p>Tipo de Instrumento: {{ins.tipoInstrumento}}</p>
+        <p>Marca: {{ ins.marca }}</p>
         <p>Precio: ${{ ins.precio }}</p>
         <p>Stock: {{ ins.stock }}</p>
       </ion-label>
-      <ion-button color="success" (click)="promo(ins.id)">Promocion</ion-button>
+      <ion-button color="success" (click)="promo(ins.id,'instrumento')">Promocion</ion-button>
+    </ion-item>
+    <ion-item *ngFor="let dis of discos">
+      <ion-label>
+        <h2>Disco: {{ dis.disco }}</h2>       
+        <p>Sello Discografico: {{dis.selloDiscografico}}</p>
+        <p>Artista: {{ dis.artista }}</p>
+        <p>Precio: ${{ dis.precio }}</p>
+        <p>Stock: {{ dis.stock }}</p>
+      </ion-label>
+      <ion-button color="success" (click)="promo(dis.id,'disco')">Promocion</ion-button>
     </ion-item>
   </ion-list>
   <ion-button (click)="publicaciones()">Crear publicaciones</ion-button>

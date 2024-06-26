@@ -11,7 +11,6 @@ import { RestService } from 'src/app/servicios/rest.service';
 })
 export class Tab3Page {
   usuarios: ClUsuario[] = [];
-  productos: any[] = [];
 
   instrumentos: any[]=[];
   discos: any[]=[];
@@ -22,12 +21,10 @@ export class Tab3Page {
 
   ngOnInit() {
     this.obtenerUsuarios();
-    this.obtenerProductos();
     this.getProds()
   }
   ionViewWillEnter() {
     this.obtenerUsuarios();
-    this.obtenerProductos();
     this.getProds();
   }
 
@@ -44,10 +41,8 @@ export class Tab3Page {
     this.router.navigate(['/modificar', id]);
   }
 
-  async obtenerProductos()  {
-    this.productos = await this.databaseService.leerColeccion('Productos')
-  }
-  promo(id: string) {
+  promo(id: string, prod: string) {
+    this.api.prod = prod;
     this.router.navigate(['/promos', id]);
   }
   publicaciones() {
@@ -66,9 +61,9 @@ export class Tab3Page {
       }
     );
     this.api.getDis().subscribe(
-      (data: any[]) => {
-        console.log('Datos recibidos:', data);
-        this.discos = data;
+      (dataa: any[]) => {
+        console.log('Datos recibidos:', dataa);
+        this.discos = dataa;
 
       },
       (error) => {

@@ -11,66 +11,133 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./promo.page.scss'],
 })
 export class PromoPage implements OnInit {
-  producto: any = {
+  instrumento: any = {
     id: '',
-    nombre: '',
-    imagen:'',
-    descripcion: '',
-    categoria: '',
+    instrumento: '',
+    tipoInstrumento:'',
+    marca: '',
+    precio: 0,
+    stock: 0
+  };
+  disco: any = {
+    id: '',
+    disco: '',
+    tipoInstrumento:'',
+    marca: '',
     precio: 0,
     stock: 0
   };
   descuento: number = 0;
-  promo: any = {
+  
+  promoi: any = {
     id: 0,
-    prod : this.producto,
+    prod : this.instrumento,
     descuento: 0,
     precioFinal: 0,
     fechaInic: "",
     fechaTerm: ""
   }
+  promod: any = {
+    id: 0,
+    prod : this.disco,
+    descuento: 0,
+    precioFinal: 0,
+    fechaInic: "",
+    fechaTerm: ""
+  }
+  instrumentos: any[]=[];
+  discos: any[]=[];
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private databaseService: BaseDeDatosService,
-    private rest: RestService,
+    public api: RestService,
     private navCtrl: NavController
   ) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.obtenerProducto(id);
+      if (this.api.prod == 'instrumento') {
+        this.obtenerInstrumento(id);
+      } else {
+        this.obtenerDisco(id);
+      }
     }
   }
-  async obtenerProducto(id: string) {
-    const productos = await this.databaseService.leerColeccion('Productos');
-    this.producto = productos.find(u => u.id === id);
+
+  async obtenerInstrumento(id: string) {
+    try {
+      const data = await this.api.getIns().toPromise();
+      if (data) {
+        const instrumentoEncontrado = data.find(instrumento => instrumento.id === +id);
+  
+        if (instrumentoEncontrado) {
+          this.instrumento = instrumentoEncontrado;
+        } else {
+          console.log('Instrumento no encontrado');
+        }
+      } else {
+        console.log('No se recibieron datos');
+      }
+    } catch (error) {
+      console.error('Error fetching data', error);
+    }
+  }
+
+  async obtenerDisco(id: string) {
+    try {
+      const data = await this.api.getDis().toPromise();
+      if (data) {
+        const discoEncontrado = data.find(disco => disco.id === +id);
+  
+        if (discoEncontrado) {
+          this.disco = discoEncontrado;
+          console.log(this.disco);
+        } else {
+          console.log('Instrumento no encontrado');
+        }
+      } else {
+        console.log('No se recibieron datos');
+      }
+    } catch (error) {
+      console.error('Error fetching data', error);
+    }
   }
   
-  async agregarPromo(promo: any) {
-    this.promo.id =  this.idRandom ;
-    await this.rest.addPromo(promo).subscribe(
-      () => {
-        this.navCtrl.navigateBack('/promo-list');  // Navegar de regreso a la lista de promos
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+  async agregarPromo(promo : any) {
+    const coleccion = 'Promociones';
+    this.databaseService.crearDocumento(coleccion, promo);
+    alert("promocion creada correctamente");
   }
-  onSubmit(promoDataForm: NgForm) {
-    if (promoDataForm.valid) {
-      const formData = promoDataForm.value;
-      this.promo.prod = this.producto;
-      this.promo.descuento = (formData.descuento *100).toFixed(2)+'%';
-      this.descuento = Number(this.producto.precio) * Number(formData.descuento);
-      this.promo.precioFinal = this.producto.precio -this.descuento;
-      this.promo.fechaInic = formData.fechaInic;
-      this.promo.fechaTerm = formData.fechaTerm;
-      this.agregarPromo(this.promo);
+
+  
+  onSubmitt(promoiDataForm: NgForm) {
+  if (promoiDataForm.valid) {
+  const formData = promoiDataForm.value;
+  this.promoi.id =  this.idRandom();
+  this.promoi.prod = this.instrumento;
+  this.promoi.descuento = (formData.descuento *100).toFixed(2)+'%';
+  this.descuento = Number(this.instrumento.precio) * Number(formData.descuento);
+  this.promoi.precioFinal = this.instrumento.precio - this.descuento;
+  this.promoi.fechaInic = formData.fechaInic;
+  this.promoi.fechaTerm = formData.fechaTerm;
+  this.agregarPromo(this.promoi);
+  }
+}
+  onSubmit(promodDataForm: NgForm) {
+    if (promodDataForm.valid) {
+    const formData = promodDataForm.value;
+    this.promod.id =  this.idRandom();
+    this.promod.prod = this.disco;
+    this.promod.descuento = (formData.descuento *100).toFixed(2)+'%';
+    this.descuento = Number(this.disco.precio) * Number(formData.descuento);
+    this.promod.precioFinal = this.disco.precio - this.descuento;
+    this.promod.fechaInic = formData.fechaInic;
+    this.promod.fechaTerm = formData.fechaTerm;
+    this.agregarPromo(this.promod);
     }
-  }
+    }
   idRandom(): number {
     const min = Math.pow(10, 10 - 1);
     const max = Math.pow(10, 10) - 1;

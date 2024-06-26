@@ -22,19 +22,19 @@ export class ExplorarPage implements OnInit {
   ngOnInit() {
     this.cont = this.route.snapshot.paramMap.get('contenido');
     if (this.cont == 'promociones') {
-      this.obtenerPublicaciones;
+      this.obtenerPromociones();
     } else if (this.cont == 'publicaciones') {
-      this.obtenerPublicaciones;
+      this.obtenerPublicaciones();
     } else {
 
     }
   }                                                                                                                                                                         
   async obtenerPublicaciones()  {
-    this.publicaciones = await this.databaseService.leerColeccion('publicaciones')
+    this.publicaciones = await this.databaseService.leerColeccion('Publicaciones')
   }
 
   async obtenerPromociones()  {
-    this.promociones = await this.databaseService.leerColeccion('promociones')
+    this.promociones = await this.databaseService.leerColeccion('Promociones')
   }
   
 }

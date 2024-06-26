@@ -17,12 +17,33 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-<div *ngIf="cont === 'promociones'">
-<h1>promociones</h1>
+<div class="promos" *ngIf="cont === 'promociones'">
+<h1>Promociones</h1>
+<ion-card  *ngFor="let promo of promociones">
+  <ion-card-header>
+    <ion-card-title>{{ promo.prod.instrumento}} {{ promo.prod.disco}}</ion-card-title>
+    <ion-card-subtitle>${{promo.precioFinal}}</ion-card-subtitle>
+    <ion-card-subtitle>Stock: {{promo.prod.stock}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{ promo.prod.instrumento}}{{ promo.prod.disco}} de {{ promo.prod.marca}}{{ promo.prod.artista}} con un {{ promo.descuento}} desde el {{ promo.fechaInic}} hasta el {{ promo.fechaTerm}}
+  </ion-card-content>
+</ion-card>
 </div>
 
 <div *ngIf="cont === 'publicaciones'">
 <h1>publicaciones</h1>
+<ion-card  *ngFor="let publi of publicaciones">
+  <ion-card-header>
+    <ion-card-title>{{ publi.titulo}}</ion-card-title>
+    <img class="imagen" [src]="publi.imagen" alt="{{ publi.imagen }}">
+    <ion-card-subtitle>{{ publi.fecha }}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    {{ publi.contenido}}
+  </ion-card-content>
+</ion-card>
 </div>
 
 <div *ngIf="cont === 'influencers'">
