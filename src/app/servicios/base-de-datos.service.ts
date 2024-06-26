@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 
 import { ClUsuario } from '../model/ClUsuario'
 
-import { Observable } from 'rxjs';
 import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc, updateDoc, query, where } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 

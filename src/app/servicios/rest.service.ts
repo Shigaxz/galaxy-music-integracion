@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, map, of, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ClPromociones } from '../model/ClPromocion';
 
 const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
