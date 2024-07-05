@@ -19,10 +19,12 @@ export class Tab2Page {
   async login() {
     try {
       const user:ClUsuario = await this.db.buscarUsuario("Usuario",this.username, this.password);
-      this.db.sesionUser = user;
-      this.db.sesion = true;
-      alert("Bienvenido "+ user.nombre);
-      this.router.navigate(['/tabs/tab1']);
+      if (user) {
+        this.db.sesionUser = user;
+        this.db.sesion = true;
+        alert("Bienvenido "+ user.nombre);
+        this.router.navigate(['/tabs/tab1']);
+      }
     } catch (error) {
       
     }

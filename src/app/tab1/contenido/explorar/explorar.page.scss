@@ -8,6 +8,7 @@ ion-content {
     background-size: cover;
 }
 h1{
+    color: rgb(255, 255, 255);
     font-size: 2.2em;
     text-shadow: 
     -1px -1px 0 #000,  
@@ -49,4 +50,16 @@ ion-card{
 }
 .imagen{
     width: 5%;
+}
+ion-title{
+    color: rgb(255, 255, 255);
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+ion-toolbar{
+    --background: none; 
+    background-color: #333141;
 }

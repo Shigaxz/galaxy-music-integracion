@@ -1,0 +1,6 @@
+projectKey=galaxy
+serverUrl=http://localhost:9000
+serverVersion=10.6.0.92116
+dashboardUrl=http://localhost:9000/dashboard?id=galaxy
+ceTaskId=66c54410-dbaa-48af-a23a-53f2cc680241
+ceTaskUrl=http://localhost:9000/api/ce/task?id=66c54410-dbaa-48af-a23a-53f2cc680241

@@ -2,16 +2,17 @@
     height: 128px;
     width: 128px;
 }
-
+h1{
+    color: rgb(255, 255, 255);
+}
+h2{
+    color: rgb(255, 255, 255);
+}
 .pheader{
     background-color: #895422;
     color: #895422;
 }
 
-.toolbar{
-    color: white;
-    background: #895422;
-}
 
 .f-cont {
     height: 500px;
@@ -58,7 +59,7 @@
     height: 70%;
 }
 .t-two{
-    background-color: #333141;
+    background-color: #0f0f0e;
     align-items: center;
     display: flex;
 }
@@ -75,7 +76,7 @@
     font-size: 20px;
     height: 45px;
     width: 180px;
-    background: #333141;
+    background: #0f0f0e;
     border: 1px solid white;
     outline: none;
     cursor: pointer;
@@ -86,4 +87,22 @@
 .title-login{
     width: 20%;
     text-align: right;
+}
+.t-cont ion-grid{
+    background-color: #0f0f0e;
+}
+ion-icon{
+    color: rgb(255, 255, 255);
+}
+ion-title{
+    color: rgb(255, 255, 255);
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+ion-toolbar{
+    --background: none; 
+    background-color: #333141;
 }
