@@ -44,7 +44,7 @@ export class RestService {
   getProductos(): Observable<ClProducto[]> {
     return this.http.get<ClProducto[]>(this.apiIntegracion)
       .pipe(
-        map(productos => productos.filter(producto => producto.estado === false))
+        map(productos => productos.filter(producto => producto.estado === true))
       );
   }
 }
