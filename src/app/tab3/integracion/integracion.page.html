@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Integracion</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<h2>Productos API Analisis de producto: </h2>
+<h3>Instrumentos: </h3>
+<ion-list *ngFor="let ins of instrumentos">
+
+  <ion-label>
+    <h2>Instrumento: {{ ins.instrumento.modelo }}</h2>     
+    <p>Marca: {{ ins.instrumento.marca }}</p>
+    <p>Descripcion: {{ ins.instrumento.descripcion }}</p>
+    <p>Tipo: {{ ins.instrumento.tipo_disco }}</p>
+    <p>Especie: {{ ins.instrumento.especie }}</p>
+    <p>Precio: ${{ins.precio}}</p>
+  </ion-label>
+  <ion-button color="success" (click)="promocion(ins.id_producto)">Promocion</ion-button>
+</ion-list>
+<h3>Discos: </h3>
+<ion-list *ngFor="let disc of discos">
+
+  <ion-label>
+    <h2>Disco: {{ disc.disco.titulo }}</h2>     
+    <p>Artista: {{ disc.disco.artista }}</p>
+    <p>Tipo: {{ disc.disco.tipo_disco }}</p>
+    <p>Sello discografico: ${{ disc.disco.sello_discografico }}</p>
+    <p>Genero: {{ disc.disco.genero_musical }}</p>
+    <p>Fecha de lanzamiento: {{disc.disco.fecha_lanzamiento}}</p>
+    <p>Precio: ${{disc.precio}}</p>
+  </ion-label>
+  <ion-button color="success" (click)="promocion(disc.id_producto)">Promocion</ion-button>
+</ion-list>
+</ion-content>

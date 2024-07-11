@@ -49,10 +49,7 @@ export class PromoPage implements OnInit {
   discos: any[]=[];
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
-    private databaseService: BaseDeDatosService,
     public api: RestService,
-    private navCtrl: NavController
   ) { }
 
   ngOnInit() {
@@ -105,10 +102,15 @@ export class PromoPage implements OnInit {
     }
   }
   
-  async agregarPromo(promo : any) {
-    const coleccion = 'Promociones';
-    this.databaseService.crearDocumento(coleccion, promo);
-    alert("promocion creada correctamente");
+  agregarPromo(promo : any) {
+    this.api.addPromo(promo).subscribe(
+      response => {
+        console.log('Promoción añadida:', response);
+      },
+      error => {
+        console.error('Error al añadir promoción:', error);
+      }
+    );
   }
 
   

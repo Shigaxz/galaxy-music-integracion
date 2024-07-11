@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BaseDeDatosService } from '../servicios/base-de-datos.service';
 import { ClUsuario } from '../model/ClUsuario';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-tab2',

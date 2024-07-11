@@ -10,7 +10,8 @@ const routes: Routes = [
   {
     path: 'modificar',
     loadChildren: () => import('./modificar/modificar.module').then( m => m.ModificarPageModule)
-  },  {
+  },
+  {
     path: 'promo',
     loadChildren: () => import('./promo/promo.module').then( m => m.PromoPageModule)
   },
@@ -21,7 +22,11 @@ const routes: Routes = [
   {
     path: 'publicaciones',
     loadChildren: () => import('./publicaciones/publicaciones.module').then( m => m.PublicacionesPageModule)
-  }
+  },
+  {
+    path: 'integracion',
+    loadChildren: () => import('./integracion/integracion.module').then( m => m.IntegracionPageModule)
+  },
 
 ];
 

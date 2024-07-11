@@ -48,6 +48,9 @@ export class Tab3Page {
   publicaciones() {
     this.router.navigate(['/publicaciones']);
   }
+  integracion() {
+    this.router.navigate(['/integracion']);
+  }
 
   getProds() {
     this.api.getIns().subscribe(

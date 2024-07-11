@@ -22,8 +22,15 @@ const routes: Routes = [
     path: 'publicaciones', loadChildren: () => import('./tab3/publicaciones/publicaciones.module').then(m => m.PublicacionesPageModule)
   },
   {
+    path: 'integracion', loadChildren: () => import('./tab3/integracion/integracion.module').then(m => m.IntegracionPageModule)
+  },
+  {
     path: 'explorar/:contenido', loadChildren: () => import('./tab1/contenido/explorar/explorar.module').then(m => m.ExplorarPageModule)
   },
+  {
+    path: 'promocion/:id',
+    loadChildren: () => import('./tab3/integracion/promocion/promocion.module').then( m => m.PromocionPageModule)
+  }
 ];
 @NgModule({
   imports: [

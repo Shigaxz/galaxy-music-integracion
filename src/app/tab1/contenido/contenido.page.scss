@@ -11,62 +11,20 @@ ion-toolbar{
     background-color: #333141;
 }
 h2{
-    color: rgb(255, 255, 255);  
+    color: rgb(255, 255, 255);
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
 }
 h3{
     color: rgb(255, 255, 255);
-}
-.s-cont{
-    height: 500px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    background-image: url(https://r4.wallpaperflare.com/wallpaper/346/873/116/music-guitar-instrumento-studio-wallpaper-233a534a88553c0d38722e8381584251.jpg);
-    background-size: cover;
-    background-position: center bottom;
-}
-.s-cont h2{
     text-shadow: 
     -1px -1px 0 #000,  
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
-    justify-content: center;
-    align-items: center;
-    display: flex
-}
-
-.s-cont ion-col{
-    justify-content: center;
-    align-items: center;
-    display: flex
-}
-
-.s-cont ion-grid{
-    max-height: max-content;
-}
-
-.s-cont button{
-    width: 22%;
-    height: 45px;
-    background: #333141;
-    border: none;
-    outline: none;
-    border-radius: 100px;
-    cursor: pointer;
-    font-size: 1.2em;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-}
-
-.s-cont button:hover{
-    width: 24%;
-    height: 45px;
-    background: #333141;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-    opacity: 1;
-    transition: .5s;
 }
 
 .d-cont{
@@ -74,8 +32,6 @@ h3{
     justify-content: center;
     align-items: center;
     display: flex;
-    background-image: url(https://c1.wallpaperflare.com/path/606/1001/306/people-crowd-stage-spotlight-4da5609acf846adbd389cd760a2d6a19.jpg);
-    background-position: center;
     background-size: cover;
 }
 .d-cont h3{
@@ -93,6 +49,7 @@ h3{
     align-items: center;
     display: flex 
 }
+
 .cont-redes{
     width: 22%;
     height: 45px;
@@ -133,4 +90,41 @@ h3{
 .title-login{
     width: 20%;
     text-align: right;
+}
+ion-content{
+    --background: none; 
+    background: url(https://i.pinimg.com/originals/b8/2e/19/b82e19eb385c15a3a580897b6cf6e51e.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.pr-seccion{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+.container{
+    background-color: rgba(88, 86, 86, 0.9);
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+
+}
+.container button{
+    width: 160px;
+    height: 45px;
+    background: #333141;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    transition: border 1s ease, background-color 1s ease;
+}
+
+.container button:hover{
+    background-color: #242222;
+    border: 1px solid white;
 }

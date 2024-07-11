@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { BaseDeDatosService } from './base-de-datos.service';
-import { Firestore, collection, addDoc, deleteDoc, getDocs, doc, updateDoc, query, where, QuerySnapshot, DocumentData, DocumentSnapshot, getFirestore } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {

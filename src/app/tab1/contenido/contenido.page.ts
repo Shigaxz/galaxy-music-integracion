@@ -1,7 +1,6 @@
 import { Component, OnInit, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
 import { BaseDeDatosService } from '../../servicios/base-de-datos.service';
-import { ClUsuario } from '../../model/ClUsuario';
 @Component({
   selector: 'app-contenido',
   templateUrl: './contenido.page.html',

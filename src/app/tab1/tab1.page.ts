@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { BaseDeDatosService } from '../servicios/base-de-datos.service';
-import { ClUsuario } from '../model/ClUsuario';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',

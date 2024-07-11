@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClPublicacion } from 'src/app/model/ClPublicacion';
-import { ClUsuario } from 'src/app/model/ClUsuario';
+
 import { BaseDeDatosService } from 'src/app/servicios/base-de-datos.service';
 import { RestService } from 'src/app/servicios/rest.service';
 @Component({
@@ -17,7 +17,8 @@ export class ExplorarPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    public databaseService:BaseDeDatosService) { }
+    public databaseService:BaseDeDatosService,
+    public api: RestService) { }
 
   ngOnInit() {
     this.cont = this.route.snapshot.paramMap.get('contenido');
@@ -34,7 +35,16 @@ export class ExplorarPage implements OnInit {
   }
 
   async obtenerPromociones()  {
-    this.promociones = await this.databaseService.leerColeccion('Promociones')
+    this.api.getPromos().subscribe(
+      (data: any[]) => {
+        console.log('Datos recibidos:', data);
+        this.promociones = data;
+
+      },
+      (error) => {
+        console.error('Error fetching data', error);
+      }
+    );
   }
   
 }

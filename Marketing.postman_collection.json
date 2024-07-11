@@ -37,10 +37,16 @@
 			"name": "post promo",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "x-secret-token",
+						"value": "dh3A64JunsgwejLW9JKPzsemk3RMhG",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\"id\":913881164,\"prod\":{\"id\":2,\"instrumento\":\"Piano Digital\",\"tipoInstrumento\":\"Teclado\",\"marca\":\"Roland\",\"precio\":1200000,\"stock\":7},\"descuento\":\"10.00%\",\"fechaInic\":\"2024-07-01\",\"fechaTerm\":\"2024-07-05\"}",
 					"options": {
 						"raw": {
 							"language": "json"

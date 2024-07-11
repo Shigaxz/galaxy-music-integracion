@@ -1,0 +1,89 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Promocion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="onSubmitt(promoiDataForm)" #promoiDataForm="ngForm" *ngIf="producto.disco === null">
+    <ion-item>
+      <ion-label position="floating">Nombre:</ion-label>
+      <ion-input [(ngModel)]="producto.instrumento.modelo" name="modelo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descripcion:</ion-label>
+      <ion-input [(ngModel)]="producto.instrumento.descripcion" name="descripcion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Tipo:</ion-label>
+      <ion-input [(ngModel)]="producto.instrumento.tipo_instrumento" name="tipo_instrumento"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Marca:</ion-label>
+      <ion-input [(ngModel)]="producto.instrumento.marca" name="marca"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Especie:</ion-label>
+      <ion-input [(ngModel)]="producto.instrumento.especie" name="especie"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Stock:</ion-label>
+      <ion-input [(ngModel)]="producto.stock" name="stock"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descuento:</ion-label>
+      <ion-input [(ngModel)]="promo.descuento" name="descuento"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha inicio:</ion-label>
+      <ion-input type="date" [(ngModel)]="promo.fechaInic" name="fechaInic"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha termino:</ion-label>
+      <ion-input type="date" [(ngModel)]="promo.fechaTerm" name="fechaTerm"></ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit">Crear promocion</ion-button>
+  </form>
+
+  <form (ngSubmit)="onSubmit(promodDataForm)" #promodDataForm="ngForm" *ngIf="producto.instrumento === null">
+    <ion-item>
+      <ion-label position="floating">Disco:</ion-label>
+      <ion-input [(ngModel)]="producto.disco.titulo" name="titulo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Artista:</ion-label>
+      <ion-input [(ngModel)]="producto.disco.artista" name="artista"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Genero:</ion-label>
+      <ion-input [(ngModel)]="producto.disco.genero_musical" name="genero_musical"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Tipo:</ion-label>
+      <ion-input [(ngModel)]="producto.disco.tipo_disco" name="tipo_disco"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Sello Discografico:</ion-label>
+      <ion-input [(ngModel)]="producto.disco.sello_discografico" name="sello_discografico"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Stock:</ion-label>
+      <ion-input [(ngModel)]="producto.stock" name="stock"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descuento:</ion-label>
+      <ion-input [(ngModel)]="promo.descuento" name="descuento"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha inicio:</ion-label>
+      <ion-input type="date" [(ngModel)]="promo.fechaInic" name="fechaInic"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha termino:</ion-label>
+      <ion-input type="date" [(ngModel)]="promo.fechaTerm" name="fechaTerm"></ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit">Crear promocion</ion-button>
+  </form>
+
+
+</ion-content>

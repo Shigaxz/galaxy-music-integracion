@@ -19,21 +19,38 @@
 <ion-content>
 <div class="promos" *ngIf="cont === 'promociones'">
 <h1>Promociones</h1>
-<ion-card  *ngFor="let promo of promociones">
-  <ion-card-header>
-    <ion-card-title>{{ promo.prod.instrumento}} {{ promo.prod.disco}}</ion-card-title>
-    <ion-card-subtitle>${{promo.precioFinal}}</ion-card-subtitle>
-    <ion-card-subtitle>Stock: {{promo.prod.stock}}</ion-card-subtitle>
-  </ion-card-header>
+<ion-card *ngFor="let promo of promociones">
+  <div *ngIf="promo.prod.instrumento === null">
+    <ion-card-header>
+      <ion-card-title>{{ promo.prod.disco.titulo}} </ion-card-title>
+      <ion-card-subtitle><del>${{ promo.prod.precio}}</del> ahora en ${{promo.precioFinal}}</ion-card-subtitle>
+      <ion-card-subtitle>Stock: {{promo.prod.stock}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+  
+      {{ promo.prod.disco.titulo}} de {{ promo.prod.disco.artista}} con un {{ promo.descuento}} desde el {{ promo.fechaInic}} hasta el {{ promo.fechaTerm}}
+    </ion-card-content>
+  </div>
 
-  <ion-card-content>
-    {{ promo.prod.instrumento}}{{ promo.prod.disco}} de {{ promo.prod.marca}}{{ promo.prod.artista}} con un {{ promo.descuento}} desde el {{ promo.fechaInic}} hasta el {{ promo.fechaTerm}}
-  </ion-card-content>
+  <div *ngIf="promo.prod.disco === null">
+    <ion-card-header>
+      <ion-card-title>{{ promo.prod.instrumento.modelo}} </ion-card-title>
+      <ion-card-subtitle><del>${{ promo.prod.precio}}</del> ahora en ${{promo.precioFinal}}</ion-card-subtitle>
+      <ion-card-subtitle>Stock: {{promo.prod.stock}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+  
+      {{ promo.prod.instrumento.modelo}} de la marca {{ promo.prod.instrumento.marca}} con un {{ promo.descuento}} desde el {{ promo.fechaInic}} hasta el {{ promo.fechaTerm}}
+    </ion-card-content>
+  </div>
+ 
 </ion-card>
 </div>
 
 <div *ngIf="cont === 'publicaciones'">
-<h1>publicaciones</h1>
+<h1>Publicaciones</h1>
 <ion-card  *ngFor="let publi of publicaciones">
   <ion-card-header>
     <ion-card-title>{{ publi.titulo}}</ion-card-title>
@@ -44,6 +61,9 @@
     {{ publi.contenido}}
   </ion-card-content>
 </ion-card>
+
+
+
 </div>
 
 <div *ngIf="cont === 'influencers'">
