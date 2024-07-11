@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import { BaseDeDatosService } from '../servicios/base-de-datos.service';
 @Component({
   selector: 'app-tabs',
   templateUrl: 'tabs.page.html',
@@ -7,6 +8,6 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  constructor(public bdd: BaseDeDatosService) {}
 
 }
